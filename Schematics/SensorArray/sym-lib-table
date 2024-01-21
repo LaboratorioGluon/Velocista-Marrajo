@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "GluonLib")(type "KiCad")(uri "E:/LaboratorioGluon/Proyectos/@Common/KicadLibs/GluonLib.kicad_sym")(options "")(descr ""))
+)

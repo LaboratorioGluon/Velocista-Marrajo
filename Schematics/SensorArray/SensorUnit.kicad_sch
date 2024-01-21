@@ -1,0 +1,23 @@
+(kicad_sch (version 20230121) (generator eeschema)
+
+  (uuid 5104ab42-82a3-4e45-afca-ce22d77afdcc)
+
+  (paper "A4")
+
+  (lib_symbols
+  )
+
+
+  (hierarchical_label "Gnd" (shape input) (at 81.915 90.17 0) (fields_autoplaced)
+    (effects (font (size 1.27 1.27)) (justify left))
+    (uuid 2b10b45c-008c-4ca3-9ab5-fec81dcf481d)
+  )
+  (hierarchical_label "SensorV" (shape input) (at 81.915 86.36 0) (fields_autoplaced)
+    (effects (font (size 1.27 1.27)) (justify left))
+    (uuid 2fb943c2-94fb-498f-9c04-50a5c15a672b)
+  )
+  (hierarchical_label "Vin" (shape input) (at 81.915 83.82 0) (fields_autoplaced)
+    (effects (font (size 1.27 1.27)) (justify left))
+    (uuid a2540dee-ac72-4680-8f2b-f3c6615db1db)
+  )
+)
