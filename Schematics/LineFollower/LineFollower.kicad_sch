@@ -3860,7 +3860,7 @@
 	)
 	(wire
 		(pts
-			(xy 39.37 88.9) (xy 44.45 88.9)
+			(xy 39.37 88.9) (xy 58.42 88.9)
 		)
 		(stroke
 			(width 0)
@@ -4130,7 +4130,7 @@
 	)
 	(wire
 		(pts
-			(xy 53.34 86.36) (xy 53.34 90.17)
+			(xy 53.34 86.36) (xy 53.34 95.25)
 		)
 		(stroke
 			(width 0)
@@ -4350,6 +4350,16 @@
 	)
 	(wire
 		(pts
+			(xy 67.31 91.44) (xy 67.31 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "84721896-d900-43e6-86e5-bb91dd7d5a31")
+	)
+	(wire
+		(pts
 			(xy 36.83 181.61) (xy 36.83 182.88)
 		)
 		(stroke
@@ -4440,7 +4450,7 @@
 	)
 	(wire
 		(pts
-			(xy 39.37 91.44) (xy 44.45 91.44)
+			(xy 39.37 91.44) (xy 67.31 91.44)
 		)
 		(stroke
 			(width 0)
@@ -4517,6 +4527,16 @@
 			(type default)
 		)
 		(uuid "ab4bb9a4-f8c5-4135-b982-e17773f8a902")
+	)
+	(wire
+		(pts
+			(xy 58.42 86.36) (xy 58.42 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ae4de673-0e2e-4482-98f5-1cfbb7602b32")
 	)
 	(wire
 		(pts
@@ -5622,7 +5642,8 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 53.34 90.17 0)
+		(at 53.34 95.25 0)
+		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5630,7 +5651,7 @@
 		(dnp no)
 		(uuid "11ad813f-64be-423a-87ad-71652e55f438")
 		(property "Reference" "#PWR06"
-			(at 53.34 96.52 0)
+			(at 53.34 101.6 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5639,7 +5660,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 55.88 90.17 0)
+			(at 50.8 95.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5647,7 +5668,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 53.34 90.17 0)
+			(at 53.34 95.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5656,7 +5677,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 53.34 90.17 0)
+			(at 53.34 95.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5665,7 +5686,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 53.34 90.17 0)
+			(at 53.34 95.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5845,7 +5866,6 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "14bf2da8-d1d3-4f70-abf4-ae0b389a03f4")
 		(property "Reference" "J1"
 			(at 34.29 65.405 0)
@@ -6000,6 +6020,73 @@
 			(project "LineFollower"
 				(path "/79641578-9075-40b8-99a6-da187ca325ba"
 					(reference "SW3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3V3")
+		(at 67.31 78.74 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "20363548-16ec-476b-a8b4-2383c8f15c0c")
+		(property "Reference" "#PWR025"
+			(at 67.31 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3V3"
+			(at 67.31 75.1642 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 67.31 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 67.31 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 67.31 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "ed007eec-45ea-4f25-bd0d-7d7d181512ef")
+		)
+		(instances
+			(project "LineFollower"
+				(path "/79641578-9075-40b8-99a6-da187ca325ba"
+					(reference "#PWR025")
 					(unit 1)
 				)
 			)
@@ -7749,6 +7836,76 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R")
+		(at 67.31 82.55 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "85a987da-afb8-4afe-b0ee-ea8554aa5805")
+		(property "Reference" "R15"
+			(at 69.85 81.2799 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "2k"
+			(at 69.85 83.8199 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder"
+			(at 69.088 82.55 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 67.31 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 67.31 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "0d7ee2c9-3beb-4aaa-8b26-bc66ab676351")
+		)
+		(pin "2"
+			(uuid "d18a14d1-7d9f-4d3c-baeb-ccd7722dea17")
+		)
+		(instances
+			(project "LineFollower"
+				(path "/79641578-9075-40b8-99a6-da187ca325ba"
+					(reference "R15")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 48.26 120.65 90)
 		(unit 1)
@@ -7888,6 +8045,76 @@
 			(project "LineFollower"
 				(path "/79641578-9075-40b8-99a6-da187ca325ba"
 					(reference "J2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 58.42 82.55 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "9d00612f-54e1-4242-b8c6-d97cc35125a5")
+		(property "Reference" "R14"
+			(at 60.96 81.2799 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "2k"
+			(at 60.96 83.8199 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder"
+			(at 60.198 82.55 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 58.42 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 58.42 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "084e79bc-38ce-41ea-a204-94ef4362f268")
+		)
+		(pin "2"
+			(uuid "61c130fb-bd85-4bf9-b56b-6eda6fb3b01e")
+		)
+		(instances
+			(project "LineFollower"
+				(path "/79641578-9075-40b8-99a6-da187ca325ba"
+					(reference "R14")
 					(unit 1)
 				)
 			)
@@ -9235,6 +9462,73 @@
 			(project "LineFollower"
 				(path "/79641578-9075-40b8-99a6-da187ca325ba"
 					(reference "R13")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3V3")
+		(at 58.42 78.74 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "f80dfd73-7caa-4662-b86e-c259bb1a8488")
+		(property "Reference" "#PWR024"
+			(at 58.42 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3V3"
+			(at 58.42 75.1642 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 58.42 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 58.42 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 58.42 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "667c47c4-bbe3-4dde-99c9-8283512156f2")
+		)
+		(instances
+			(project "LineFollower"
+				(path "/79641578-9075-40b8-99a6-da187ca325ba"
+					(reference "#PWR024")
 					(unit 1)
 				)
 			)
