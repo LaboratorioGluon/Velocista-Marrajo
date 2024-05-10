@@ -1,0 +1,3 @@
+
+#define WIFI_SSID "MIWIFI_cQJD"
+#define WIFI_PWD "FYz6UEY7"
