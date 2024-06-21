@@ -1,8 +1,8 @@
 #include "HwDevices.h"
 
-
-RcPwm motor1(LEDC_CHANNEL_0,GPIO_NUM_19);
-RcPwm motor2(LEDC_CHANNEL_1,GPIO_NUM_17);
+RcPwm motor1 (LEDC_CHANNEL_0,GPIO_NUM_19);
+RcPwm motor2 (LEDC_CHANNEL_1,GPIO_NUM_17);
+RcPwm succion(LEDC_CHANNEL_2,GPIO_NUM_16);
 
 uint32_t motorSpeed = 0;
 uint32_t startStop = 0;

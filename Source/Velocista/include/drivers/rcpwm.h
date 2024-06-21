@@ -12,13 +12,15 @@ class RcPwm{
 public:
     RcPwm(ledc_channel_t _channel, gpio_num_t _pinEsc, uint8_t _isInverted = false);
 
-    void Init(uint32_t initMs = 1000, uint32_t _minPwm = 1000, uint32_t _maxPwm  = 2000);
+    void Init(uint32_t initMs = 1000, uint32_t _minPwm = 1000, uint32_t _maxPwm  = 2000, uint8_t initTimer = 0);
 
     void setPowerPercentage(uint32_t power);
     void setTargetPercentage(uint32_t atarget);
     void update(uint32_t deltaTms);
 
     void setRate(uint32_t newRate){ rateOfChange = 300; }
+
+    float getPowerPercentage(){ return current ; }
 
     void setRawDuty(uint32_t duty);
 private:
@@ -36,7 +38,7 @@ private:
 
     uint32_t rateOfChange;
 
-    uint32_t eqSlope, eqOffset;
+    float eqSlope, eqOffset;
 
 };
 

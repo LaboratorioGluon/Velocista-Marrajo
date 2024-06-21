@@ -3,6 +3,12 @@
 
 #include "drivers/sensorArray.h"
 
+enum MORRO_RET{
+    MORRO_LINE_OK,
+    MORRO_LINE_LOST
+};
+
+
 class morroController{
 public:
     morroController(sensorArray &pSensors);
@@ -11,7 +17,8 @@ public:
 
     uint8_t calibrate();
 
-    int32_t getLinePosition();
+    MORRO_RET getLinePosition(int32_t& linePos);
+    MORRO_RET searchLinePosition();
 
 private:
 

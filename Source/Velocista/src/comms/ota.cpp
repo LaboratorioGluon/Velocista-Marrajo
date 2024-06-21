@@ -21,6 +21,7 @@ void updateOTA()
     esp_https_ota_config_t ota_config = {
         .http_config = &config,
     };
+
     ESP_LOGI(TAG, "Attempting to download update from %s", config.url);
     esp_err_t ret = esp_https_ota(&ota_config);
     if (ret == ESP_OK)
@@ -53,10 +54,14 @@ void doCommand()
     {
         ESP_LOGE(TAG, "NEW VERSION!!!");
         status.setStatus(OTA_UPDATE);
+        
         commandRunning = 1;
         //motors.setDirection(MotorController::STOP);
         motor1.setPowerPercentage(0);
         motor2.setPowerPercentage(0);
+        succion.setPowerPercentage(0);
+        //sensors.stopAdc();
+        vTaskDelay(pdMS_TO_TICKS(2000));
         updateOTA();
     }
 }
@@ -75,6 +80,6 @@ void otaTask(void *arg)
 TaskHandle_t otaTaskHandle;
 void startOtaTask(UBaseType_t priority, const BaseType_t core)
 {
-    xTaskCreatePinnedToCore(otaTask, "OTA_Task", 4096, NULL, priority, &otaTaskHandle, core);
+    xTaskCreatePinnedToCore(otaTask, "OTA_Task", 4096, NULL, configMAX_PRIORITIES-2, &otaTaskHandle, core);
 }
 // Fin Micro FSM

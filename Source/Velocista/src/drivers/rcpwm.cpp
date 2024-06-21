@@ -21,21 +21,26 @@ void RcPwm::setRawDuty(uint32_t duty)
     ledc_set_duty(LEDC_LOW_SPEED_MODE, channelLedC, duty);
     ledc_update_duty(LEDC_LOW_SPEED_MODE, channelLedC);
 }
+#include <esp_timer.h>
 
 /* Configure the PWM to 50Hz */
-void RcPwm::Init(uint32_t initMs, uint32_t _minPwm , uint32_t _maxPwm)
+void RcPwm::Init(uint32_t initMs, uint32_t _minPwm , uint32_t _maxPwm, uint8_t initTimer)
 {
-    esp_err_t error;
-    ledc_timer_config_t ledc_timer;
+    
+    if(initTimer)
+    {
+            
+        ledc_timer_config_t ledc_timer;
 
-    ledc_timer.speed_mode = LEDC_LOW_SPEED_MODE;
-    ledc_timer.timer_num = LEDC_TIMER_0;
-    ledc_timer.duty_resolution = LEDC_TIMER_13_BIT;
-    ledc_timer.freq_hz = 4000;
-    ledc_timer.clk_cfg = LEDC_AUTO_CLK;
-    error = ledc_timer_config(&ledc_timer);
-    if (error != ESP_OK)
-        return;
+        ledc_timer.speed_mode = LEDC_LOW_SPEED_MODE;
+        ledc_timer.timer_num = LEDC_TIMER_0;
+        ledc_timer.duty_resolution = LEDC_TIMER_13_BIT;
+        ledc_timer.freq_hz = 4000;
+        ledc_timer.clk_cfg = LEDC_AUTO_CLK;
+        ledc_timer.deconfigure = false;
+
+        ESP_ERROR_CHECK(ledc_timer_config(&ledc_timer));
+    }
 
     ledc_channel_config_t ledc_channel;
     
@@ -61,7 +66,7 @@ void RcPwm::Init(uint32_t initMs, uint32_t _minPwm , uint32_t _maxPwm)
 
 void RcPwm::setPowerPercentage(uint32_t power)
 {
-    ESP_LOGE(TAG, "Setting power to: %lu", power);
+    //ESP_LOGE(TAG, "Setting power to: %lu", power);
     current = power*1.0f;
     uint32_t microseconds = eqSlope*power + eqOffset;
     setMicrosecondsUp(microseconds);

@@ -1,6 +1,7 @@
 #ifndef __LED_DRIVER_H__
 #define __LED_DRIVER_H__
 
+
 extern "C"
 {
     #include "led_strip_encoder.h"

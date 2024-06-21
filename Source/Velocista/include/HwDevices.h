@@ -13,6 +13,7 @@
 
 extern RcPwm motor2;
 extern RcPwm motor1;
+extern RcPwm succion;
 
 extern uint32_t motorSpeed;
 extern uint32_t startStop;

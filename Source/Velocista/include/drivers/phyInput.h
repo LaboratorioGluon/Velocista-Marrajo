@@ -5,6 +5,7 @@
 
 #include <driver/gpio.h>
 
+
 class phyInput{
 public:
     phyInput();
@@ -16,7 +17,7 @@ public:
     uint8_t getInput(uint8_t buttonIndex);
 
 private:
-    gpio_config_t gpioConfig;
+    gpio_config_t gpioConfig;   
 
 };
 

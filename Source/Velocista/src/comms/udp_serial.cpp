@@ -33,4 +33,5 @@ void UdpSerial::printf(const char *format, ...)
         ESP_LOGE(TAG, "Error occurred during sending: errno %d", errno);
     }
     va_end(argp);
+    
 }

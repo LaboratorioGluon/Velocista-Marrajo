@@ -15,7 +15,7 @@ void phyInput::init()
     gpioConfig.pin_bit_mask = (1<<GPIO_NUM_2) | (1<<GPIO_NUM_5);
     gpioConfig.pull_down_en = GPIO_PULLDOWN_DISABLE;
     gpioConfig.pull_up_en = GPIO_PULLUP_ENABLE;
-
+    
     gpio_config(&gpioConfig);
 }
 

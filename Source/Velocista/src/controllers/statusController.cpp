@@ -36,6 +36,18 @@ void statusController::setStatus(enum STATUS newStatus)
         configLed(1, 0, 8, 0, 0);
         configLed(0, 0, 8, 0, 0);
         break;
+    case NOMINAL:
+        configLed(1, 0, 0, 8, 0);
+        configLed(0, 0, 0, 8, 0);
+        break;
+    case SECURITY_STOP:
+        configLed(1, 8, 0, 0, 250);
+        configLed(0, 8, 0, 0, 250);
+        break;
+    case DUMPING_LOG:
+        configLed(1, 0, 0, 8, 250);
+        configLed(0, 0, 0, 8, 250);
+        break;
     default:
         break;
     }

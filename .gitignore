@@ -1,6 +1,6 @@
 **/*-backups
 **/.pio
-
+**/.vscode/
 *.zip
 *.000
 *.bak

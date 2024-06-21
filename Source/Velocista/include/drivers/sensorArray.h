@@ -2,9 +2,11 @@
 #define __SENSOR_ARRAY_H__
 
 #include <esp_adc/adc_oneshot.h>
+#include <esp_adc/adc_continuous.h>
 #include <driver/i2c.h>
 
 #include "gpioExpander.h"
+#include "drivers/custom_adc.h"
 
 
 struct adcOneShotDef{
@@ -27,10 +29,13 @@ public:
 
 
     void init();
+    void initCont();
 
     void readSensors(uint16_t &evenValue, uint16_t &oddValue);
 
     uint8_t configExpander( uint8_t  sensorE, uint8_t sensorO);
+
+    void stopAdc(){ adc_continuous_resume(handle); adc_continuous_stop(handle); adc_continuous_deinit(handle);}
 
 private:
 
@@ -40,6 +45,11 @@ private:
     adcOneShotDef configEven, configOdd;
 
     gpio_num_t pinMosfet;
+
+    adc_continuous_handle_t handle;
+    adc_continuous_config_t dig_cfg;
+    adc_continuous_handle_cfg_t adc_config;
+    adc_continuous_evt_cbs_t cbs;
 
 };
 

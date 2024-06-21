@@ -2,17 +2,7 @@
 #define __STATUS_CONTROLLER_H__
 
 #include "drivers/ledDriver.h"
-
-enum STATUS{
-    OTA_AND_BT_OK = 0, // First step is to start OTA and BT
-    MOTORS_OK,
-    CALIBRATING,
-    OTA_UPDATE,
-    WAITING_START,
-    LINE_LOST,
-    NOMINAL,
-    SECURITY_STOP
-};
+#include "states.h"
 
 class statusController{
 public:
@@ -23,6 +13,8 @@ public:
     void setStatus(enum STATUS newStatus);
 
     void loop(uint32_t dtms);
+
+    enum STATUS getStatus(){ return currentStatus; }
 
 private:
 
